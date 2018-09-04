@@ -42,6 +42,10 @@ canvas {
     transform: translate(-50%, -50%);
 }
 
+.character {
+    font-weight: 900;
+}
+
 @media only screen and (max-width: 600px) {
     .content {
         width: 95%;

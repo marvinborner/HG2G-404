@@ -136,7 +136,7 @@ const whaleDialog =
     "\n" +
     "And the rest, after a sudden wet thud, was silence.";
 const flowerPotDialog = "Not again...";
-const timeout = 5000;
+const timeout = 20000;
 
 setTimeout(() => {
     generateObject();
