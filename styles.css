@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-color: #0c0c1c;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+.starBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
