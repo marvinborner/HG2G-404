@@ -54,23 +54,17 @@ canvas {
     }
 }
 
-@media only screen and (max-height: 1000px) and (max-width: 600px) {
-    .content {
-        font-size: 2.5vh;
-    }
-}
-
 /*
     Whale falling down
  */
-.spermWhale {
+.fallingObject {
     position: absolute;
     display: none;
     width: auto;
     height: 30vw;
 }
 
-.dropWhale {
+.dropObject {
     display: block;
     z-index: 1;
     bottom: 0;

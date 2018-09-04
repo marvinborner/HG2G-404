@@ -107,7 +107,6 @@ particlesJS("starBackground", {
 /*
     Whale Partyy!
  */
-const timeout = 10000;
 const whaleDialog =
     "Ah … ! What’s happening? it thought.\n" +
     "\n" +
@@ -137,16 +136,32 @@ const whaleDialog =
     "\n" +
     "And the rest, after a sudden wet thud, was silence.";
 const flowerPotDialog = "Not again...";
+const timeout = 5000;
 
 setTimeout(() => {
-    let whale = document.getElementById("whaleParty");
-    whale.classList.add("dropWhale");
-    console.log(whaleDialog);
+    generateObject();
     setInterval(() => {
-        let randomNumber = Math.floor(Math.random() * 70) + 1;
-        whale = document.getElementById("whaleParty"); // update
-        whale.style.left = randomNumber.toString() + "%";
-        const newWhale = whale.cloneNode(true);
-        whale.parentNode.replaceChild(newWhale, whale);
-    }, timeout);
+        generateObject()
+    }, timeout)
 }, timeout);
+
+function generateObject() {
+    let whale = document.getElementById("whaleParty");
+    let petuniaBowl = document.getElementById("petuniaBowlParty");
+    let randomLeftOffset = Math.floor(Math.random() * 70) + 1,
+        randomSelector = Math.floor(Math.random() * 2) + 1,
+        current,
+        newObject;
+
+    if (randomSelector === 1) {
+        current = whale;
+        console.log(whaleDialog);
+    } else {
+        current = petuniaBowl;
+        console.log(flowerPotDialog);
+    }
+    newObject = current.cloneNode(true);
+    current.parentNode.replaceChild(newObject, current);
+    newObject.classList.add("dropObject");
+    newObject.style.left = randomLeftOffset.toString() + "%";
+}
