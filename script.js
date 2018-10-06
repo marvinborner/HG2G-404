@@ -155,13 +155,22 @@ function generateObject() {
 
     if (randomSelector === 1) {
         current = whale;
+        speak(whaleDialog);
         console.log(whaleDialog);
     } else {
         current = petuniaBowl;
+        speak(flowerPotDialog);
         console.log(flowerPotDialog);
     }
     newObject = current.cloneNode(true);
     current.parentNode.replaceChild(newObject, current);
     newObject.classList.add("dropObject");
     newObject.style.left = randomLeftOffset.toString() + "%";
+}
+
+function speak(message) {
+    const msg = new SpeechSynthesisUtterance(message);
+    const voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[0];
+    window.speechSynthesis.speak(msg)
 }
